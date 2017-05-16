@@ -8,7 +8,7 @@ function validateForm(){
   	}else if(/[0-9]/.test(nombre)){
 		alert("Error en nombre: no puede contener números!");
   	}else if(nombre.charAt(0) != nombre.charAt(0).toUpperCase()){
-        alert("La primera letra debe ser mayúscula");
+        alert("Error en Nombre: La primera letra debe ser mayúscula");
     }
   }
   validarNombre();
@@ -20,7 +20,7 @@ function validateForm(){
   	}else if(/[0-9]/.test(apellido)){
 		alert("Error en apellido: no puede contener números!");
   	}else if(apellido.charAt(0) != apellido.charAt(0).toUpperCase()){
-        alert("La primera letra debe ser mayúscula");
+        alert("Error en Apellido: La primera letra debe ser mayúscula");
     }
   }
   validarApellido();
@@ -30,7 +30,7 @@ function validateForm(){
   	if(email.length == 0){
 		alert("Error en correo: no puede quedar vacío!\n");
   	}else if(!/([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/.test(email)){
-		alert("Error en correo: no tiene el formato test@test.xx!");
+		alert("Error en correo: no tiene el formato test@test.com!");
   	}
   }
   validarEmail();
@@ -46,6 +46,18 @@ function validateForm(){
 	}
   }
   validarPassword();
+
+  function modelosBicis(){
+  	var bicis    = document.getElementsByTagName("select");
+  	for(var i = 0; i < bicis.length; i++){
+	  if(bicis[i].value == "0"){
+	  	alert("Tipo de Bici: Debe elegir una opción");
+	  }
+
+    }
+
+  }
+  modelosBicis();
 
 }
 
